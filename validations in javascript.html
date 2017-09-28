@@ -1,0 +1,21 @@
+
+First Name : <input type="text" id="txtFirstName" required//><br /><br />
+Last Name : <input type="text" id="txtLastName"  required//><br /><br />
+City: <input type="text" id="txtCity"  required//><br /><br />
+Email : <input type="text" id="txtEmail" onkeyup="EmailValidation()" />
+
+
+<script type="text/javascript">
+    function EmailValidation() {
+        var emailTextBox = document.getElementById("txtEmail");
+        var email = emailTextBox.value;
+        var emailRegEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        emailTextBox.style.color = "white";
+        if (emailRegEx.test(email)) {
+            emailTextBox.style.backgroundColor = "yellow";
+        }
+        else {
+            emailTextBox.style.backgroundColor = "red";
+        }
+    }
+</script>
